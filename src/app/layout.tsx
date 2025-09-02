@@ -93,7 +93,7 @@ function Navigation() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border/50 py-12 mt-24">
+    <footer className="border-t border-gray-200/50 dark:border-gray-800/50 py-12 mt-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -130,7 +130,7 @@ function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <div className="border-t border-gray-200/50 dark:border-gray-800/50 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm text-muted-foreground">
             © 2024 Human DesAIn. All rights reserved.
           </p>

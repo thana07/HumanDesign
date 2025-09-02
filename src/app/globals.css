@@ -75,7 +75,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   
   html {
@@ -326,7 +326,8 @@
   /* Input field Apple style */
   .input-ios {
     @apply w-full px-4 py-3 rounded-xl bg-secondary/50;
-    @apply border border-border/50 transition-all duration-200;
+    @apply border transition-all duration-200;
+    border-color: hsl(var(--border) / 0.5);
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
     @apply placeholder:text-muted-foreground;
   }
