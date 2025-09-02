@@ -29,8 +29,8 @@ import toast from 'react-hot-toast';
 
 export default function ChartViewPage() {
   const [chart, setChart] = useState<Chart | null>(null);
-  const [selectedGate, setSelectedGate] = useState<Gate | null>(null);
-  const [selectedCenter, setSelectedCenter] = useState<Center | null>(null);
+  const [_selectedGate, _setSelectedGate] = useState<Gate | null>(null);
+  const [_selectedCenter, _setSelectedCenter] = useState<Center | null>(null);
   const [activeTab, setActiveTab] = useState<'overview' | 'gates' | 'centers' | 'coach'>('overview');
 
   useEffect(() => {

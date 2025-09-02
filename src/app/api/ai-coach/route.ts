@@ -62,9 +62,10 @@ export async function POST(request: NextRequest) {
         max_tokens: 800,
       });
       console.log(`Using model: ${preferredModel}`);
-    } catch (modelError: any) {
+    } catch (modelError: unknown) {
       // If experimental model fails, fallback to stable model
-      if (modelError?.status === 404 || modelError?.message?.includes('model')) {
+      const error = modelError as { status?: number; message?: string };
+      if (error?.status === 404 || error?.message?.includes('model')) {
         console.log(`Model ${preferredModel} not available, falling back to gpt-4o-mini`);
         completion = await openai.chat.completions.create({
           model: 'gpt-4o-mini', // Fallback to latest mini model
@@ -108,7 +109,13 @@ export async function POST(request: NextRequest) {
   }
 }
 
-function buildSystemPrompt(chartData: any): string {
+function buildSystemPrompt(chartData: {
+  type: string;
+  authority: string;
+  profile: string;
+  centers?: Array<{ defined: boolean; name: string }>;
+  gates?: Array<unknown>;
+}): string {
   return `Du bist ein fortgeschrittener Human Design Analyst mit GPT-5-mini Capabilities (September 2025).
 Du verstehst tiefe Zusammenhänge im Human Design System und kannst präzise, personalisierte Analysen liefern.
 
@@ -122,7 +129,7 @@ ANALYSE-PARAMETER:
 - Typ: ${chartData.type}
 - Autorität: ${chartData.authority}
 - Profil: ${chartData.profile}
-- Definierte Zentren: ${chartData.centers?.filter((c: any) => c.defined).map((c: any) => c.name).join(', ') || 'Keine Daten'}
+- Definierte Zentren: ${chartData.centers?.filter((c) => c.defined).map((c) => c.name).join(', ') || 'Keine Daten'}
 - Aktivierte Tore: ${chartData.gates?.length || 0} Tore
 
 KOMMUNIKATIONS-RICHTLINIEN:
@@ -141,7 +148,11 @@ SPEZIAL-FEATURES (GPT-5-mini):
 Antworte präzise, einfühlsam und immer mit Bezug auf die konkrete Chart-Konfiguration.`;
 }
 
-function getFallbackResponse(query: string, chartData: any): string {
+function getFallbackResponse(query: string, chartData: {
+  type: string;
+  authority: string;
+  profile: string;
+}): string {
   const lowerQuery = query.toLowerCase();
   
   if (lowerQuery.includes('typ')) {
@@ -159,7 +170,11 @@ function getFallbackResponse(query: string, chartData: any): string {
   return `Dein Human Design als ${chartData.type} mit ${chartData.authority} Autorität und ${chartData.profile} Profil ist einzigartig. Jeder Aspekt gibt dir Hinweise, wie du authentisch leben kannst. Was möchtest du genauer verstehen?`;
 }
 
-function getFollowUpQuestions(chartData: any): string[] {
+function getFollowUpQuestions(chartData: {
+  type: string;
+  authority: string;
+  profile: string;
+}): string[] {
   return [
     `Wie kann ich als ${chartData.type} meine Energie optimal nutzen?`,
     `Was bedeutet meine ${chartData.authority} Autorität für wichtige Entscheidungen?`,
@@ -169,7 +184,7 @@ function getFollowUpQuestions(chartData: any): string[] {
   ].slice(0, 3);
 }
 
-function extractCitations(text: string): any[] {
+function extractCitations(_text: string): Array<{ source: string; quote: string }> {
   // Einfache Citation-Extraktion
   // In Produktion würde man hier strukturierte Daten von OpenAI anfordern
   return [];

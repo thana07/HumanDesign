@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { Chart, Center, Channel, Gate } from '../../types/human-design'
+import { Chart, Center, Gate } from '../../types/human-design'
 import { cn } from '../../lib/utils'
 
 interface BodygraphProps {
@@ -19,12 +19,12 @@ export function Bodygraph({
   interactive = true,
   showLabels = true,
   className,
-  onGateClick,
-  onCenterClick
+  onGateClick: _onGateClick,
+  onCenterClick: _onCenterClick
 }: BodygraphProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [hoveredElement, setHoveredElement] = useState<string | null>(null)
-  const [selectedGate, setSelectedGate] = useState<number | null>(null)
+  const [hoveredElement, _setHoveredElement] = useState<string | null>(null)
+  const [selectedGate, _setSelectedGate] = useState<number | null>(null)
 
   // Center Positionen im Bodygraph (normalisiert 0-1)
   const centerPositions = {
@@ -83,6 +83,7 @@ export function Bodygraph({
     // Draw Gates
     drawGates(ctx, width, height)
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chart, hoveredElement, selectedGate])
 
   const drawChannels = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
@@ -255,8 +256,8 @@ export function Bodygraph({
     if (!canvas) return
     
     const rect = canvas.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    const y = event.clientY - rect.top
+    const _x = event.clientX - rect.left
+    const _y = event.clientY - rect.top
     
     // Check if click is on a gate or center
     // Implementation would check distances to gates/centers
@@ -275,7 +276,7 @@ export function Bodygraph({
           ref={canvasRef}
           className="w-full h-[600px] cursor-pointer"
           onClick={handleCanvasClick}
-          onMouseMove={(e) => {
+          onMouseMove={(_e) => {
             // Handle hover effects
           }}
         />

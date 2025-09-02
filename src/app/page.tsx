@@ -18,7 +18,7 @@ import Link from "next/link"
 import { useState } from "react"
 
 export default function Home() {
-  const [isHovered, setIsHovered] = useState<string | null>(null)
+  const [_isHovered, setIsHovered] = useState<string | null>(null)
 
   const features = [
     {
