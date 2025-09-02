@@ -269,7 +269,7 @@ export default function ChartViewPage() {
                       <div
                         key={`${gate.number}-${gate.line}`}
                         className="p-3 rounded-lg bg-secondary/50 cursor-pointer hover:bg-secondary transition-colors"
-                        onClick={() => setSelectedGate(gate)}
+                        onClick={() => _setSelectedGate(gate)}
                       >
                         <div className="flex items-center gap-2">
                           <div className={`w-3 h-3 rounded-full ${gate.design ? 'bg-red-500' : 'bg-black'}`} />
