@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Human DesAIn - AI-Powered Human Design Platform
 
-## Getting Started
+## 🚀 Overview
 
-First, run the development server:
+Human DesAIn is a revolutionary platform that combines the ancient wisdom of Human Design with cutting-edge artificial intelligence. Our platform provides precise, scientifically-grounded Human Design analysis without esoteric jargon.
+
+## ✨ Features
+
+- **AI-Powered Analysis**: Advanced algorithms for precise Human Design calculations
+- **AI Coach**: Personalized insights powered by artificial intelligence
+- **Relationship Analysis**: AI-driven insights into partnership and team dynamics
+- **Transit & Cycles**: Real-time transits and AI-enhanced cycle predictions
+- **Cross-Check System**: Double-verified chart calculations for maximum accuracy
+- **GDPR Compliant**: Full data privacy and security compliance
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 15.5, React 19, TypeScript
+- **Styling**: Tailwind CSS v4, Framer Motion
+- **Backend**: Supabase
+- **AI Integration**: OpenAI API
+- **UI Components**: Radix UI
+- **Charts**: Recharts
+- **Forms**: React Hook Form with Zod validation
+
+## 📦 Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/human-desain.git
+
+# Navigate to the project directory
+cd human-desain
+
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start the development server with Turbopack
+- `npm run build` - Build the production application
+- `npm start` - Start the production server
+- `npm run lint` - Run ESLint
 
-## Learn More
+## 🏗️ Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   ├── auth/              # Authentication pages
+│   ├── chart/             # Chart creation and viewing
+│   ├── dashboard/         # User dashboard
+│   └── relationship/      # Relationship analysis
+├── components/            # React components
+│   ├── ai-coach/         # AI coach chat interface
+│   ├── charts/           # Chart visualization
+│   ├── forms/            # Form components
+│   └── ui/               # UI components
+├── config/               # Configuration files
+├── hooks/                # Custom React hooks
+├── lib/                  # Utility libraries
+│   └── hd-engine/       # Human Design calculation engine
+├── services/             # API services
+├── types/                # TypeScript type definitions
+└── utils/                # Utility functions
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a `.env.local` file in the root directory:
 
-## Deploy on Vercel
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENAI_API_KEY=your_openai_api_key
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+We welcome contributions! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🌟 Support
+
+For support, email support@humandesain.ai or open an issue on GitHub.
+
+---
+
+Built with ❤️ by the Human DesAIn Team
