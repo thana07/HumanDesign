@@ -116,8 +116,8 @@ export default function ChartViewPage() {
               >
                 <Bodygraph
                   chart={chart}
-                  onGateClick={setSelectedGate}
-                  onCenterClick={setSelectedCenter}
+                  onGateClick={_setSelectedGate}
+                  onCenterClick={_setSelectedCenter}
                 />
               </motion.div>
             </div>
