@@ -117,7 +117,7 @@ export default function Home() {
               }}
               transition={{
                 duration: 10 + i * 2,
-                repeat: Infinity,
+                repeat: Number.POSITIVE_INFINITY,
                 ease: "easeInOut"
               }}
             >
@@ -217,7 +217,7 @@ export default function Home() {
           >
             <motion.div
               animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2, ease: "easeInOut" }}
             >
               <ChevronDown className="w-6 h-6 text-muted-foreground" />
             </motion.div>
@@ -292,7 +292,7 @@ export default function Home() {
                         rotate: [0, 360],
                         scale: [1, 1.2, 1],
                       } : {}}
-                      transition={{ duration: 2, repeat: activeFeature === index ? Infinity : 0 }}
+                      transition={{ duration: 2, repeat: activeFeature === index ? Number.POSITIVE_INFINITY : 0 }}
                     >
                       <feature.icon className="w-full h-full text-white" />
                     </motion.div>
@@ -302,7 +302,7 @@ export default function Home() {
                       animate={activeFeature === index ? {
                         backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                       } : {}}
-                      transition={{ duration: 3, repeat: Infinity }}
+                      transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
                       style={{ backgroundSize: '200% 200%' }}
                     >
                       {feature.title}
@@ -329,7 +329,7 @@ export default function Home() {
                             transition={{
                               duration: 3,
                               delay: i * 0.5,
-                              repeat: Infinity,
+                              repeat: Number.POSITIVE_INFINITY,
                             }}
                           />
                         ))}

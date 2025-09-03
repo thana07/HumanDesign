@@ -17,89 +17,128 @@ import {
 import { Chart } from '@/types/human-design';
 
 // Demo chart data - Einstein's Human Design
-const DEMO_CHART: Chart = {
+const DEMO_CHART: Chart & { name: string, birthPlace: string, birthTime: string } = {
   id: 'demo-einstein',
   userId: 'demo',
   name: 'Albert Einstein',
-  birthDate: new Date('1879-03-14T11:30:00'),
   birthPlace: 'Ulm, Germany',
   birthTime: '11:30',
+  birthData: {
+    date: '1879-03-14',
+    time: '11:30',
+    timeAccuracy: 'exact' as const,
+    location: {
+      name: 'Ulm, Germany',
+      lat: 48.4011,
+      lon: 9.9876,
+      timezone: 'Europe/Berlin'
+    }
+  },
   
   type: 'manifestor',
-  authority: 'Emotional Authority',
+  authority: 'emotional',
   strategy: 'To Inform',
   profile: '5/1',
-  definition: 'Single Definition',
   notSelf: 'Anger',
+  incarnationCross: 'Right Angle Cross of Consciousness',
   
   centers: [
-    { name: 'head', defined: true },
-    { name: 'ajna', defined: true },
-    { name: 'throat', defined: true },
-    { name: 'g_center', defined: false },
-    { name: 'heart', defined: false },
-    { name: 'spleen', defined: false },
-    { name: 'solar_plexus', defined: true },
-    { name: 'sacral', defined: false },
-    { name: 'root', defined: true }
+    { name: 'head', defined: true, gates: [64, 61, 63], connectedChannels: ['64-47', '61-24', '63-4'] },
+    { name: 'ajna', defined: true, gates: [47, 24, 4, 17, 11], connectedChannels: ['47-64', '24-61', '4-63', '17-62', '11-56'] },
+    { name: 'throat', defined: true, gates: [62, 23, 56, 16, 20], connectedChannels: ['62-17', '23-43', '56-11', '16-48', '20-57'] },
+    { name: 'g_center', defined: false, gates: [], connectedChannels: [] },
+    { name: 'heart', defined: false, gates: [], connectedChannels: [] },
+    { name: 'spleen', defined: false, gates: [], connectedChannels: [] },
+    { name: 'solar_plexus', defined: true, gates: [36, 22, 37, 6], connectedChannels: ['36-35', '22-12', '37-40', '6-59'] },
+    { name: 'sacral', defined: false, gates: [], connectedChannels: [] },
+    { name: 'root', defined: true, gates: [53, 60, 52, 19, 39, 41], connectedChannels: ['53-42', '60-3', '52-9', '19-49', '39-55', '41-30'] }
   ],
   
   gates: [
-    { number: 64, line: 3, color: 'red', activated: true, design: false },
-    { number: 61, line: 2, color: 'black', activated: true, design: true },
-    { number: 63, line: 4, color: 'red', activated: true, design: false },
-    { number: 47, line: 1, color: 'black', activated: true, design: true },
-    { number: 24, line: 5, color: 'red', activated: true, design: false },
-    { number: 4, line: 6, color: 'black', activated: true, design: true },
-    { number: 17, line: 2, color: 'red', activated: true, design: false },
-    { number: 43, line: 3, color: 'black', activated: true, design: true },
-    { number: 11, line: 4, color: 'red', activated: true, design: false },
-    { number: 56, line: 1, color: 'black', activated: true, design: true },
-    { number: 36, line: 5, color: 'red', activated: true, design: false },
-    { number: 35, line: 6, color: 'black', activated: true, design: true }
+    { number: 64, line: 3, color: 1, activated: true, design: false, planet: 'Sun' },
+    { number: 61, line: 2, color: 2, activated: true, design: true, planet: 'Earth' },
+    { number: 63, line: 4, color: 1, activated: true, design: false, planet: 'Moon' },
+    { number: 47, line: 1, color: 2, activated: true, design: true, planet: 'North Node' },
+    { number: 24, line: 5, color: 1, activated: true, design: false, planet: 'South Node' },
+    { number: 4, line: 6, color: 2, activated: true, design: true, planet: 'Mercury' },
+    { number: 17, line: 2, color: 1, activated: true, design: false, planet: 'Venus' },
+    { number: 43, line: 3, color: 2, activated: true, design: true, planet: 'Mars' },
+    { number: 11, line: 4, color: 1, activated: true, design: false, planet: 'Jupiter' },
+    { number: 56, line: 1, color: 2, activated: true, design: true, planet: 'Saturn' },
+    { number: 36, line: 5, color: 1, activated: true, design: false, planet: 'Uranus' },
+    { number: 35, line: 6, color: 2, activated: true, design: true, planet: 'Neptune' }
   ],
   
   channels: [
-    { gates: [64, 47], defined: true, type: 'conscious' },
-    { gates: [61, 24], defined: true, type: 'unconscious' },
-    { gates: [63, 4], defined: true, type: 'conscious' },
-    { gates: [17, 43], defined: true, type: 'generated' },
-    { gates: [11, 56], defined: true, type: 'conscious' },
-    { gates: [36, 35], defined: true, type: 'unconscious' }
+    { gates: [64, 47], defined: true, type: 'conscious', name: 'The Channel of Abstraction' },
+    { gates: [61, 24], defined: true, type: 'unconscious', name: 'The Channel of Awareness' },
+    { gates: [63, 4], defined: true, type: 'conscious', name: 'The Channel of Logic' },
+    { gates: [17, 43], defined: true, type: 'both', name: 'The Channel of Acceptance' },
+    { gates: [11, 56], defined: true, type: 'conscious', name: 'The Channel of Curiosity' },
+    { gates: [36, 35], defined: true, type: 'unconscious', name: 'The Channel of Transitoriness' }
   ],
   
-  variables: {
-    digestion: 'Consecutive',
-    environment: 'Mountains',
-    perspective: 'Personal',
-    motivation: 'Innocence'
+  planets: {
+    personality: {
+      Sun: { gate: 64, line: 3, degree: 354.5 },
+      Earth: { gate: 63, line: 3, degree: 174.5 },
+      Moon: { gate: 17, line: 2, degree: 45.3 },
+      NorthNode: { gate: 47, line: 1, degree: 123.4 },
+      SouthNode: { gate: 22, line: 1, degree: 303.4 },
+      Mercury: { gate: 4, line: 6, degree: 342.1 },
+      Venus: { gate: 43, line: 3, degree: 23.7 },
+      Mars: { gate: 11, line: 4, degree: 67.2 },
+      Jupiter: { gate: 56, line: 1, degree: 234.5 },
+      Saturn: { gate: 36, line: 5, degree: 189.3 },
+      Uranus: { gate: 59, line: 2, degree: 156.7 },
+      Neptune: { gate: 35, line: 6, degree: 45.2 },
+      Pluto: { gate: 61, line: 2, degree: 12.3 }
+    },
+    design: {
+      Sun: { gate: 61, line: 2, degree: 264.5 },
+      Earth: { gate: 62, line: 2, degree: 84.5 },
+      Moon: { gate: 24, line: 5, degree: 312.3 },
+      NorthNode: { gate: 4, line: 6, degree: 33.4 },
+      SouthNode: { gate: 49, line: 6, degree: 213.4 },
+      Mercury: { gate: 17, line: 2, degree: 252.1 },
+      Venus: { gate: 11, line: 4, degree: 293.7 },
+      Mars: { gate: 43, line: 3, degree: 337.2 },
+      Jupiter: { gate: 35, line: 6, degree: 144.5 },
+      Saturn: { gate: 56, line: 1, degree: 99.3 },
+      Uranus: { gate: 60, line: 3, degree: 66.7 },
+      Neptune: { gate: 36, line: 5, degree: 315.2 },
+      Pluto: { gate: 58, line: 3, degree: 282.3 }
+    }
   },
   
-  incarnationCross: 'Right Angle Cross of Consciousness',
-  
-  createdAt: new Date(),
-  updatedAt: new Date()
+  calculatedAt: new Date().toISOString(),
+  engineVersion: {
+    primary: 'v2.0.0',
+    secondary: 'v1.9.5',
+    differences: []
+  },
+  confidence: 0.98
 };
 
 // Sample celebrity charts
 const CELEBRITY_CHARTS = [
-  { name: 'Albert Einstein', type: 'Manifestor', profile: '5/1' },
-  { name: 'Marie Curie', type: 'Projector', profile: '3/5' },
-  { name: 'Steve Jobs', type: 'Manifestor', profile: '5/1' },
-  { name: 'Oprah Winfrey', type: 'Manifesting Generator', profile: '6/2' },
-  { name: 'Leonardo da Vinci', type: 'Generator', profile: '1/3' }
+  { name: 'Albert Einstein', type: 'manifestor' as Chart['type'], profile: '5/1' as Chart['profile'] },
+  { name: 'Marie Curie', type: 'projector' as Chart['type'], profile: '3/5' as Chart['profile'] },
+  { name: 'Steve Jobs', type: 'manifestor' as Chart['type'], profile: '5/1' as Chart['profile'] },
+  { name: 'Oprah Winfrey', type: 'manifesting_generator' as Chart['type'], profile: '6/2' as Chart['profile'] },
+  { name: 'Leonardo da Vinci', type: 'generator' as Chart['type'], profile: '1/3' as Chart['profile'] }
 ];
 
 export default function DemoPage() {
-  const [currentChart, setCurrentChart] = useState(DEMO_CHART);
+  const [currentChart, setCurrentChart] = useState<typeof DEMO_CHART>(DEMO_CHART);
   const [selectedCelebrity, setSelectedCelebrity] = useState(0);
 
   const randomizeChart = () => {
-    const types = ['Generator', 'Manifestor', 'Projector', 'Reflector', 'Manifesting Generator'];
-    const authorities = ['Sacral Authority', 'Emotional Authority', 'Splenic Authority', 'Ego Authority', 'Self-Projected Authority'];
-    const profiles = ['1/3', '1/4', '2/4', '2/5', '3/5', '3/6', '4/6', '5/1', '5/2', '6/2', '6/3'];
+    const types: Chart['type'][] = ['generator', 'manifestor', 'projector', 'reflector', 'manifesting_generator'];
+    const authorities: Chart['authority'][] = ['sacral', 'emotional', 'splenic', 'ego_manifested', 'self_projected'];
+    const profiles: Chart['profile'][] = ['1/3', '1/4', '2/4', '2/5', '3/5', '3/6', '4/6', '5/1', '5/2', '6/2', '6/3'];
     
-    const newChart: Chart = {
+    const newChart: typeof DEMO_CHART = {
       ...currentChart,
       type: types[Math.floor(Math.random() * types.length)],
       authority: authorities[Math.floor(Math.random() * authorities.length)],
@@ -158,15 +197,15 @@ export default function DemoPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="flex items-center gap-2 text-sm">
                   <Calendar className="w-4 h-4 text-muted-foreground" />
-                  <span>March 14, 1879</span>
+                  <span>{currentChart.birthData.date}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Clock className="w-4 h-4 text-muted-foreground" />
-                  <span>11:30 AM</span>
+                  <span>{currentChart.birthTime}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin className="w-4 h-4 text-muted-foreground" />
-                  <span>Ulm, Germany</span>
+                  <span>{currentChart.birthPlace}</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <User className="w-4 h-4 text-muted-foreground" />
@@ -207,10 +246,6 @@ export default function DemoPage() {
                 <div>
                   <p className="text-sm text-muted-foreground">Profile</p>
                   <p className="font-medium">{currentChart.profile}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Definition</p>
-                  <p className="font-medium">{currentChart.definition}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Not-Self Theme</p>
