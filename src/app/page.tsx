@@ -4,17 +4,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "../components/ui/button"
 import { 
   Sparkles, 
-  Brain, 
-  Users, 
-  Calendar,
   Star,
   ArrowRight,
   Zap,
   Shield,
   Globe,
   ChevronDown,
-  Moon,
-  Sun,
   Compass,
   Activity,
   Infinity
@@ -27,10 +22,10 @@ import { GalaxyPortal } from "@/components/galaxy-portal"
 import { HolographicCard } from "@/components/holographic-card"
 
 export default function Home() {
-  const [_isHovered, setIsHovered] = useState<string | null>(null)
+  const [_isHovered, _setIsHovered] = useState<string | null>(null)
   const [showPortal, setShowPortal] = useState(true)
   const [activeFeature, setActiveFeature] = useState<number | null>(null)
-  const [cosmicEnergy, setCosmicEnergy] = useState(0)
+  const [_cosmicEnergy, setCosmicEnergy] = useState(0)
   
   useEffect(() => {
     const timer = setTimeout(() => {

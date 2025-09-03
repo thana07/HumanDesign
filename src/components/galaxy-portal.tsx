@@ -33,7 +33,7 @@ export function GalaxyPortal({
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [particles, setParticles] = useState<Particle[]>([]);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [_mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [portalEnergy, setPortalEnergy] = useState(0);
   const animationRef = useRef<number>();

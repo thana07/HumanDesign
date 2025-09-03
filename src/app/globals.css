@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+}
+
 /* Apple-inspired Global Styles */
 @layer base {
   :root {
