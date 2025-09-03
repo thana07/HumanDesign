@@ -96,7 +96,7 @@ export function UniverseBackground({ interactive = true }: { interactive?: boole
   const [shootingStars, setShootingStars] = useState<ShootingStar[]>([]);
   const [hoveredConstellation, setHoveredConstellation] = useState<string | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
 
   // Generate random stars
   useEffect(() => {

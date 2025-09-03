@@ -36,7 +36,7 @@ export function GalaxyPortal({
   const [_mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [portalEnergy, setPortalEnergy] = useState(0);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number>(0);
   const timeRef = useRef(0);
 
   // Initialize particles

@@ -7,6 +7,11 @@
   .text-foreground {
     color: hsl(var(--foreground));
   }
+  .glass {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
 /* Apple-inspired Global Styles */
@@ -306,7 +311,7 @@
   
   /* Focus styles */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+    outline: none;
   }
   
   /* Typography utilities */
@@ -325,7 +330,7 @@
   .btn-ios {
     @apply px-4 py-2 rounded-xl font-medium transition-all duration-200;
     @apply hover:scale-[0.98] active:scale-[0.96];
-    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    outline: none;
   }
   
   /* Card with glass effect */
@@ -338,7 +343,7 @@
     @apply w-full px-4 py-3 rounded-xl bg-secondary/50;
     @apply border transition-all duration-200;
     border-color: hsl(var(--border) / 0.5);
-    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    outline: none;
     @apply placeholder:text-muted-foreground;
   }
 }
