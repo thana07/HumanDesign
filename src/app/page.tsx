@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "../components/ui/button"
 import { 
   Sparkles, 
@@ -14,49 +14,95 @@ import {
   Globe,
   ChevronDown,
   Moon,
-  Sun
+  Sun,
+  Compass,
+  Activity,
+  Infinity
 } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { UniverseBackground } from "@/components/universe-background"
 import { OrbitalAnimation } from "@/components/orbital-animation"
+import { GalaxyPortal } from "@/components/galaxy-portal"
+import { HolographicCard } from "@/components/holographic-card"
 
 export default function Home() {
   const [_isHovered, setIsHovered] = useState<string | null>(null)
+  const [showPortal, setShowPortal] = useState(true)
+  const [activeFeature, setActiveFeature] = useState<number | null>(null)
+  const [cosmicEnergy, setCosmicEnergy] = useState(0)
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPortal(false)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCosmicEnergy(prev => (prev + 1) % 100)
+    }, 50)
+    return () => clearInterval(interval)
+  }, [])
 
   const features = [
     {
-      icon: Brain,
-      title: "AI-Powered Analysis",
-      description: "Advanced AI algorithms for precise Human Design calculations",
-      color: "from-blue-500 to-cyan-500"
+      icon: Compass,
+      title: "Quantum Navigation",
+      description: "Navigate your cosmic blueprint with quantum precision",
+      color: "from-violet-500 to-purple-500",
+      glow: "#8B5CF6"
     },
     {
-      icon: Sparkles,
-      title: "AI Coach",
-      description: "Personalized insights powered by artificial intelligence",
-      color: "from-purple-500 to-pink-500"
+      icon: Activity,
+      title: "Energy Dynamics",
+      description: "Real-time energy field analysis and optimization",
+      color: "from-cyan-500 to-blue-500",
+      glow: "#06B6D4"
     },
     {
-      icon: Users,
-      title: "Relationship Analysis",
-      description: "AI-driven insights into partnership and team dynamics",
-      color: "from-orange-500 to-red-500"
+      icon: Infinity,
+      title: "Infinite Potential",
+      description: "Unlock limitless possibilities in your design",
+      color: "from-pink-500 to-rose-500",
+      glow: "#EC4899"
     },
     {
-      icon: Calendar,
-      title: "Transit & Cycles",
-      description: "Real-time transits and AI-enhanced cycle predictions",
-      color: "from-green-500 to-teal-500"
+      icon: Star,
+      title: "Stellar Alignment",
+      description: "Align with cosmic frequencies for optimal living",
+      color: "from-amber-500 to-orange-500",
+      glow: "#F59E0B"
     }
   ]
 
   return (
-    <div className="min-h-screen relative">
-      {/* Universe Background */}
-      <UniverseBackground interactive={true} />
+    <>
+      <AnimatePresence>
+        {showPortal && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="fixed inset-0 z-50"
+          >
+            <GalaxyPortal onEnter={() => setShowPortal(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
       
-      <div className="relative z-10">
+      <div className="min-h-screen relative">
+        {/* Universe Background */}
+        <UniverseBackground interactive={true} />
+        
+        {/* Aurora Borealis Effect */}
+        <div className="fixed inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-purple-500/5 to-cyan-500/5 animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/5 to-blue-500/5 animate-pulse" style={{ animationDelay: '2s' }} />
+        </div>
+        
+        <div className="relative z-10">
       {/* Hero Section */}
       <section className="relative overflow-hidden min-h-screen flex items-center">
         {/* Floating Zodiac Symbols */}
@@ -226,35 +272,76 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50, rotateY: -90 }}
+                whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                onMouseEnter={() => setIsHovered(feature.title)}
-                onMouseLeave={() => setIsHovered(null)}
-                className="relative group"
+                transition={{ 
+                  delay: index * 0.2, 
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100 
+                }}
+                onMouseEnter={() => setActiveFeature(index)}
+                onMouseLeave={() => setActiveFeature(null)}
               >
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 h-full hover:shadow-smooth-lg transition-all duration-300 hover:scale-[1.02] hover:bg-white/20">
-                  {/* Icon with gradient background */}
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} p-2.5 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-full h-full text-white" />
+                <HolographicCard glowColor={feature.glow} intensity={activeFeature === index ? 1.5 : 1}>
+                  <div className="p-6">
+                    {/* Animated Icon */}
+                    <motion.div 
+                      className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} p-3 mb-4 mx-auto`}
+                      animate={activeFeature === index ? {
+                        rotate: [0, 360],
+                        scale: [1, 1.2, 1],
+                      } : {}}
+                      transition={{ duration: 2, repeat: activeFeature === index ? Infinity : 0 }}
+                    >
+                      <feature.icon className="w-full h-full text-white" />
+                    </motion.div>
+                    
+                    <motion.h3 
+                      className="text-xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-300"
+                      animate={activeFeature === index ? {
+                        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                      } : {}}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      style={{ backgroundSize: '200% 200%' }}
+                    >
+                      {feature.title}
+                    </motion.h3>
+                    
+                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                    
+                    {/* Energy Orbs */}
+                    {activeFeature === index && (
+                      <motion.div className="absolute -inset-4 pointer-events-none">
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className="absolute w-2 h-2 rounded-full"
+                            style={{
+                              background: feature.glow,
+                              boxShadow: `0 0 10px ${feature.glow}`,
+                            }}
+                            animate={{
+                              x: [0, 50, -50, 0],
+                              y: [0, -50, 50, 0],
+                              scale: [0, 1, 0],
+                            }}
+                            transition={{
+                              duration: 3,
+                              delay: i * 0.5,
+                              repeat: Infinity,
+                            }}
+                          />
+                        ))}
+                      </motion.div>
+                    )}
                   </div>
-                  
-                  <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
-                  
-                  {/* Hover effect */}
-                  <motion.div
-                    className="absolute inset-0 rounded-2xl bg-gradient-to-r opacity-0 group-hover:opacity-5 transition-opacity duration-300"
-                    style={{
-                      background: `linear-gradient(135deg, ${feature.color.split(' ')[1]} 0%, ${feature.color.split(' ')[3]} 100%)`
-                    }}
-                  />
-                </div>
+                </HolographicCard>
               </motion.div>
             ))}
           </div>
