@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="de" className="smooth-scroll dark">
-      <body className="antialiased min-h-screen bg-black">
+    <html lang="de" className="smooth-scroll dark" suppressHydrationWarning>
+      <body className="antialiased min-h-screen bg-black" suppressHydrationWarning>
         <Navigation />
         <main className="flex-1">
           {children}
