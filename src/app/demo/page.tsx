@@ -25,7 +25,7 @@ const DEMO_CHART: Chart = {
   birthPlace: 'Ulm, Germany',
   birthTime: '11:30',
   
-  type: 'Manifestor',
+  type: 'manifestor',
   authority: 'Emotional Authority',
   strategy: 'To Inform',
   profile: '5/1',
