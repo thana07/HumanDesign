@@ -1,0 +1,192 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]: AI
+        - generic [ref=e8]: Human DesAIn
+      - generic [ref=e9]:
+        - link "Features" [ref=e10] [cursor=pointer]:
+          - /url: /features
+        - link "Preise" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e14]:
+        - link "Anmelden" [ref=e15] [cursor=pointer]:
+          - /url: /auth/login
+        - link "Kostenlos starten" [ref=e16] [cursor=pointer]:
+          - /url: /auth/signup
+  - main [ref=e17]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: ♈
+          - generic [ref=e25]: ♉
+          - generic [ref=e26]: ♊
+          - generic [ref=e27]: ♋
+          - generic [ref=e28]: ♌
+          - generic [ref=e29]: ♍
+          - generic [ref=e30]: ♎
+          - generic [ref=e31]: ♏
+          - generic [ref=e32]: ♐
+          - generic [ref=e33]: ♑
+          - generic [ref=e34]: ♒
+          - generic [ref=e35]: ♓
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - img [ref=e39]
+              - generic [ref=e41]: The Revolutionary AI-Powered Human Design Platform
+            - heading "Discover YourCosmic Blueprint" [level=1] [ref=e42]:
+              - generic [ref=e43]: Discover Your
+              - generic [ref=e44]: Cosmic Blueprint
+            - paragraph [ref=e45]: AI-powered Human Design analysis with scientific precision. Verifiable, explainable, and powered by advanced artificial intelligence.
+            - generic [ref=e46]:
+              - link "Kostenlos starten" [ref=e47] [cursor=pointer]:
+                - /url: /auth/signup
+                - button "Kostenlos starten" [ref=e48]:
+                  - text: Kostenlos starten
+                  - img [ref=e49]
+              - link "Live Demo ansehen" [ref=e51] [cursor=pointer]:
+                - /url: /demo
+                - button "Live Demo ansehen" [ref=e52]
+            - generic [ref=e53]:
+              - generic [ref=e54]:
+                - img [ref=e55]
+                - generic [ref=e57]: GDPR Compliant
+              - generic [ref=e58]:
+                - img [ref=e59]
+                - generic [ref=e61]: Real-time AI Analysis
+              - generic [ref=e62]:
+                - img [ref=e63]
+                - generic [ref=e66]: Secure Hosting
+          - img [ref=e69]
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - heading "Your Cosmic Journey Awaits" [level=2] [ref=e74]
+          - paragraph [ref=e75]: Explore the planets and their influence on your Human Design
+        - generic [ref=e77]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: ☉
+            - generic [ref=e88]: "Sun: Your core identity and ego"
+          - generic [ref=e90]:
+            - generic [ref=e92]: ☿
+            - generic [ref=e93]:
+              - generic [ref=e94]: Mercury
+              - generic [ref=e95]: Communication and intellect
+          - generic [ref=e97]:
+            - generic [ref=e99]: ♀
+            - generic [ref=e100]:
+              - generic [ref=e101]: Venus
+              - generic [ref=e102]: Love and relationships
+          - generic [ref=e104]:
+            - generic [ref=e106]: ⊕
+            - generic [ref=e107]:
+              - generic [ref=e108]: Earth
+              - generic [ref=e109]: Material world and grounding
+          - generic [ref=e111]:
+            - generic [ref=e113]: ♂
+            - generic [ref=e114]:
+              - generic [ref=e115]: Mars
+              - generic [ref=e116]: Action and desire
+          - generic [ref=e118]:
+            - generic [ref=e120]: ♃
+            - generic [ref=e121]:
+              - generic [ref=e122]: Jupiter
+              - generic [ref=e123]: Expansion and wisdom
+          - generic [ref=e125]:
+            - generic [ref=e127]: ♄
+            - generic [ref=e128]:
+              - generic [ref=e129]: Saturn
+              - generic [ref=e130]: Structure and discipline
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - heading "AI-Powered Features" [level=2] [ref=e134]
+          - paragraph [ref=e135]: Built with cutting-edge AI technology for precision and user experience
+        - generic [ref=e136]:
+          - generic [ref=e138]:
+            - img [ref=e140]
+            - heading "AI-Powered Analysis" [level=3] [ref=e150]
+            - paragraph [ref=e151]: Advanced AI algorithms for precise Human Design calculations
+          - generic [ref=e153]:
+            - img [ref=e155]
+            - heading "AI Coach" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Personalized insights powered by artificial intelligence
+          - generic [ref=e160]:
+            - img [ref=e162]
+            - heading "Relationship Analysis" [level=3] [ref=e167]
+            - paragraph [ref=e168]: AI-driven insights into partnership and team dynamics
+          - generic [ref=e170]:
+            - img [ref=e172]
+            - heading "Transit & Cycles" [level=3] [ref=e174]
+            - paragraph [ref=e175]: Real-time transits and AI-enhanced cycle predictions
+      - generic [ref=e178]:
+        - img [ref=e180]
+        - heading "Ready for Your Cosmic Journey?" [level=2] [ref=e182]
+        - paragraph [ref=e183]: Join thousands who have discovered their Human Design through AI and are living more authentically.
+        - link "Start Free with AI" [ref=e185] [cursor=pointer]:
+          - /url: /auth/signup
+          - button "Start Free with AI" [ref=e186]:
+            - text: Start Free with AI
+            - img [ref=e187]
+        - paragraph [ref=e189]: No credit card required • 14 days free AI-powered trial
+  - contentinfo [ref=e190]:
+    - generic [ref=e191]:
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - heading "Produkt" [level=3] [ref=e194]
+          - list [ref=e195]:
+            - listitem [ref=e196]:
+              - link "Features" [ref=e197] [cursor=pointer]:
+                - /url: /features
+            - listitem [ref=e198]:
+              - link "Preise" [ref=e199] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e200]:
+              - link "API" [ref=e201] [cursor=pointer]:
+                - /url: /api
+        - generic [ref=e202]:
+          - heading "Unternehmen" [level=3] [ref=e203]
+          - list [ref=e204]:
+            - listitem [ref=e205]:
+              - link "Über uns" [ref=e206] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e207]:
+              - link "Blog" [ref=e208] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e209]:
+              - link "Karriere" [ref=e210] [cursor=pointer]:
+                - /url: /careers
+        - generic [ref=e211]:
+          - heading "Support" [level=3] [ref=e212]
+          - list [ref=e213]:
+            - listitem [ref=e214]:
+              - link "Hilfe" [ref=e215] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e216]:
+              - link "Kontakt" [ref=e217] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e218]:
+              - link "Status" [ref=e219] [cursor=pointer]:
+                - /url: /status
+        - generic [ref=e220]:
+          - heading "Rechtliches" [level=3] [ref=e221]
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - link "Datenschutz" [ref=e224] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e225]:
+              - link "AGB" [ref=e226] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e227]:
+              - link "Impressum" [ref=e228] [cursor=pointer]:
+                - /url: /imprint
+      - generic [ref=e229]:
+        - paragraph [ref=e230]: © 2024 Human DesAIn. All rights reserved.
+        - paragraph [ref=e231]: Made with ❤️ in Germany • DSGVO konform
+```

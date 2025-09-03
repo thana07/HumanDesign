@@ -1,0 +1,116 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]: AI
+        - generic [ref=e8]: Human DesAIn
+      - generic [ref=e9]:
+        - link "Features" [ref=e10] [cursor=pointer]:
+          - /url: /features
+        - link "Preise" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e14]:
+        - link "Anmelden" [ref=e15] [cursor=pointer]:
+          - /url: /auth/login
+        - link "Kostenlos starten" [ref=e16] [cursor=pointer]:
+          - /url: /auth/signup
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img [ref=e23]
+        - heading "Create Account" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Join us to explore your Human Design
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - generic [ref=e29]: Name
+          - generic [ref=e30]:
+            - img [ref=e31]
+            - textbox "Your name" [ref=e34]
+        - generic [ref=e35]:
+          - generic [ref=e36]: Email
+          - generic [ref=e37]:
+            - img [ref=e38]
+            - textbox "your@email.com" [ref=e41]
+        - generic [ref=e42]:
+          - generic [ref=e43]: Password
+          - generic [ref=e44]:
+            - img [ref=e45]
+            - textbox "Create a password" [ref=e48]
+        - generic [ref=e49]:
+          - generic [ref=e50]: Confirm Password
+          - generic [ref=e51]:
+            - img [ref=e52]
+            - textbox "Confirm your password" [ref=e55]
+        - button "Create Account" [ref=e56]:
+          - generic [ref=e57]:
+            - text: Create Account
+            - img [ref=e58]
+      - paragraph [ref=e61]:
+        - text: Already have an account?
+        - link "Sign in" [ref=e62] [cursor=pointer]:
+          - /url: /auth/login
+  - contentinfo [ref=e63]:
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "Produkt" [level=3] [ref=e67]
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - link "Features" [ref=e70] [cursor=pointer]:
+                - /url: /features
+            - listitem [ref=e71]:
+              - link "Preise" [ref=e72] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e73]:
+              - link "API" [ref=e74] [cursor=pointer]:
+                - /url: /api
+        - generic [ref=e75]:
+          - heading "Unternehmen" [level=3] [ref=e76]
+          - list [ref=e77]:
+            - listitem [ref=e78]:
+              - link "Über uns" [ref=e79] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e80]:
+              - link "Blog" [ref=e81] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e82]:
+              - link "Karriere" [ref=e83] [cursor=pointer]:
+                - /url: /careers
+        - generic [ref=e84]:
+          - heading "Support" [level=3] [ref=e85]
+          - list [ref=e86]:
+            - listitem [ref=e87]:
+              - link "Hilfe" [ref=e88] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e89]:
+              - link "Kontakt" [ref=e90] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e91]:
+              - link "Status" [ref=e92] [cursor=pointer]:
+                - /url: /status
+        - generic [ref=e93]:
+          - heading "Rechtliches" [level=3] [ref=e94]
+          - list [ref=e95]:
+            - listitem [ref=e96]:
+              - link "Datenschutz" [ref=e97] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e98]:
+              - link "AGB" [ref=e99] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e100]:
+              - link "Impressum" [ref=e101] [cursor=pointer]:
+                - /url: /imprint
+      - generic [ref=e102]:
+        - paragraph [ref=e103]: © 2024 Human DesAIn. All rights reserved.
+        - paragraph [ref=e104]: Made with ❤️ in Germany • DSGVO konform
+  - button "Open Next.js Dev Tools" [ref=e110] [cursor=pointer]:
+    - img [ref=e111] [cursor=pointer]
+  - alert [ref=e114]
+```

@@ -1,0 +1,167 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]: AI
+        - generic [ref=e8]: Human DesAIn
+      - generic [ref=e9]:
+        - link "Features" [ref=e10] [cursor=pointer]:
+          - /url: /features
+        - link "Preise" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e14]:
+        - link "Anmelden" [ref=e15] [cursor=pointer]:
+          - /url: /auth/login
+        - link "Kostenlos starten" [ref=e16] [cursor=pointer]:
+          - /url: /auth/signup
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Human Design Demo" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Explore Human Design with famous historical figures. This is a demo to show the capabilities of our chart system.
+      - generic [ref=e23]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - heading "Marie Curie" [level=2] [ref=e27]
+            - button "Randomize" [ref=e28]:
+              - img [ref=e29]
+              - text: Randomize
+          - generic [ref=e34]:
+            - generic [ref=e35]:
+              - img [ref=e36]
+              - generic [ref=e41]: March 14, 1879
+            - generic [ref=e42]:
+              - img [ref=e43]
+              - generic [ref=e46]: 11:30 AM
+            - generic [ref=e47]:
+              - img [ref=e48]
+              - generic [ref=e51]: Ulm, Germany
+            - generic [ref=e52]:
+              - img [ref=e53]
+              - generic [ref=e56]: Projector
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - heading "Typ" [level=3] [ref=e62]
+              - paragraph [ref=e63]: Projector
+            - generic [ref=e64]:
+              - heading "Autorität" [level=3] [ref=e65]
+              - paragraph [ref=e66]: Emotional Authority
+            - generic [ref=e67]:
+              - heading "Profil" [level=3] [ref=e68]
+              - paragraph [ref=e69]: 3/5
+            - generic [ref=e70]:
+              - heading "Strategie" [level=3] [ref=e71]
+              - paragraph [ref=e72]: To Inform
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - heading "Chart Details" [level=3] [ref=e75]:
+              - img [ref=e76]
+              - text: Chart Details
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - paragraph [ref=e82]: Type
+                - paragraph [ref=e83]: Projector
+              - generic [ref=e84]:
+                - paragraph [ref=e85]: Authority
+                - paragraph [ref=e86]: Emotional Authority
+              - generic [ref=e87]:
+                - paragraph [ref=e88]: Strategy
+                - paragraph [ref=e89]: To Inform
+              - generic [ref=e90]:
+                - paragraph [ref=e91]: Profile
+                - paragraph [ref=e92]: 3/5
+              - generic [ref=e93]:
+                - paragraph [ref=e94]: Definition
+                - paragraph [ref=e95]: Single Definition
+              - generic [ref=e96]:
+                - paragraph [ref=e97]: Not-Self Theme
+                - paragraph [ref=e98]: Anger
+          - generic [ref=e99]:
+            - heading "Celebrity Charts" [level=3] [ref=e100]:
+              - img [ref=e101]
+              - text: Celebrity Charts
+            - generic [ref=e107]:
+              - button "Albert Einstein Manifestor • 5/1" [ref=e108]:
+                - paragraph [ref=e109]: Albert Einstein
+                - paragraph [ref=e110]: Manifestor • 5/1
+              - button "Marie Curie Projector • 3/5" [active] [ref=e111]:
+                - paragraph [ref=e112]: Marie Curie
+                - paragraph [ref=e113]: Projector • 3/5
+              - button "Steve Jobs Manifestor • 5/1" [ref=e114]:
+                - paragraph [ref=e115]: Steve Jobs
+                - paragraph [ref=e116]: Manifestor • 5/1
+              - button "Oprah Winfrey Manifesting Generator • 6/2" [ref=e117]:
+                - paragraph [ref=e118]: Oprah Winfrey
+                - paragraph [ref=e119]: Manifesting Generator • 6/2
+              - button "Leonardo da Vinci Generator • 1/3" [ref=e120]:
+                - paragraph [ref=e121]: Leonardo da Vinci
+                - paragraph [ref=e122]: Generator • 1/3
+          - generic [ref=e123]:
+            - heading "Ready for Your Chart?" [level=3] [ref=e124]
+            - paragraph [ref=e125]: Create your personalized Human Design chart and discover your unique blueprint.
+            - button "Create My Chart" [ref=e126]
+  - contentinfo [ref=e127]:
+    - generic [ref=e128]:
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - heading "Produkt" [level=3] [ref=e131]
+          - list [ref=e132]:
+            - listitem [ref=e133]:
+              - link "Features" [ref=e134] [cursor=pointer]:
+                - /url: /features
+            - listitem [ref=e135]:
+              - link "Preise" [ref=e136] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e137]:
+              - link "API" [ref=e138] [cursor=pointer]:
+                - /url: /api
+        - generic [ref=e139]:
+          - heading "Unternehmen" [level=3] [ref=e140]
+          - list [ref=e141]:
+            - listitem [ref=e142]:
+              - link "Über uns" [ref=e143] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e144]:
+              - link "Blog" [ref=e145] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e146]:
+              - link "Karriere" [ref=e147] [cursor=pointer]:
+                - /url: /careers
+        - generic [ref=e148]:
+          - heading "Support" [level=3] [ref=e149]
+          - list [ref=e150]:
+            - listitem [ref=e151]:
+              - link "Hilfe" [ref=e152] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e153]:
+              - link "Kontakt" [ref=e154] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e155]:
+              - link "Status" [ref=e156] [cursor=pointer]:
+                - /url: /status
+        - generic [ref=e157]:
+          - heading "Rechtliches" [level=3] [ref=e158]
+          - list [ref=e159]:
+            - listitem [ref=e160]:
+              - link "Datenschutz" [ref=e161] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e162]:
+              - link "AGB" [ref=e163] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e164]:
+              - link "Impressum" [ref=e165] [cursor=pointer]:
+                - /url: /imprint
+      - generic [ref=e166]:
+        - paragraph [ref=e167]: © 2024 Human DesAIn. All rights reserved.
+        - paragraph [ref=e168]: Made with ❤️ in Germany • DSGVO konform
+  - button "Open Next.js Dev Tools" [ref=e174] [cursor=pointer]:
+    - img [ref=e175] [cursor=pointer]
+  - alert [ref=e179]
+```

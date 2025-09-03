@@ -1,0 +1,123 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]: AI
+        - generic [ref=e8]: Human DesAIn
+      - generic [ref=e9]:
+        - link "Features" [ref=e10] [cursor=pointer]:
+          - /url: /features
+        - link "Preise" [ref=e11] [cursor=pointer]:
+          - /url: /pricing
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e13] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e14]:
+        - link "Anmelden" [ref=e15] [cursor=pointer]:
+          - /url: /auth/login
+        - link "Kostenlos starten" [ref=e16] [cursor=pointer]:
+          - /url: /auth/signup
+  - main [ref=e17]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - img [ref=e23]
+        - heading "Erstelle dein Chart" [level=1] [ref=e29]
+        - paragraph [ref=e30]: Gib deine Geburtsdaten ein für eine präzise Analyse
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - img [ref=e34]
+            - text: Geburtsdatum
+          - textbox [ref=e39]
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - text: Geburtszeit
+            - button "Geburtszeit" [ref=e45]:
+              - img [ref=e46]
+          - generic [ref=e50]:
+            - textbox [ref=e51]
+            - combobox [ref=e52]:
+              - option "Exakt" [selected]
+              - option "Ungefähr"
+              - option "Unbekannt"
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - img [ref=e55]
+            - text: Geburtsort
+          - generic [ref=e58]:
+            - textbox "Stadt eingeben..." [ref=e59]
+            - button "Suchen" [ref=e60]
+        - generic [ref=e61]:
+          - heading "Was passiert als nächstes?" [level=3] [ref=e62]
+          - list [ref=e63]:
+            - listitem [ref=e64]: • Dein Chart wird mit zwei unabhängigen Engines berechnet
+            - listitem [ref=e65]: • Ergebnisse werden cross-verifiziert für maximale Genauigkeit
+            - listitem [ref=e66]: • Du erhältst eine interaktive Visualisierung deines Bodygraphs
+            - listitem [ref=e67]: • KI-Coach steht für personalisierte Fragen bereit
+        - button "Chart berechnen" [ref=e68]
+      - generic [ref=e69]:
+        - paragraph [ref=e70]: Deine Daten werden verschlüsselt und DSGVO-konform gespeichert.
+        - paragraph [ref=e71]: Wir geben keine Daten an Dritte weiter.
+  - contentinfo [ref=e72]:
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - heading "Produkt" [level=3] [ref=e76]
+          - list [ref=e77]:
+            - listitem [ref=e78]:
+              - link "Features" [ref=e79] [cursor=pointer]:
+                - /url: /features
+            - listitem [ref=e80]:
+              - link "Preise" [ref=e81] [cursor=pointer]:
+                - /url: /pricing
+            - listitem [ref=e82]:
+              - link "API" [ref=e83] [cursor=pointer]:
+                - /url: /api
+        - generic [ref=e84]:
+          - heading "Unternehmen" [level=3] [ref=e85]
+          - list [ref=e86]:
+            - listitem [ref=e87]:
+              - link "Über uns" [ref=e88] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e89]:
+              - link "Blog" [ref=e90] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e91]:
+              - link "Karriere" [ref=e92] [cursor=pointer]:
+                - /url: /careers
+        - generic [ref=e93]:
+          - heading "Support" [level=3] [ref=e94]
+          - list [ref=e95]:
+            - listitem [ref=e96]:
+              - link "Hilfe" [ref=e97] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e98]:
+              - link "Kontakt" [ref=e99] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e100]:
+              - link "Status" [ref=e101] [cursor=pointer]:
+                - /url: /status
+        - generic [ref=e102]:
+          - heading "Rechtliches" [level=3] [ref=e103]
+          - list [ref=e104]:
+            - listitem [ref=e105]:
+              - link "Datenschutz" [ref=e106] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e107]:
+              - link "AGB" [ref=e108] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e109]:
+              - link "Impressum" [ref=e110] [cursor=pointer]:
+                - /url: /imprint
+      - generic [ref=e111]:
+        - paragraph [ref=e112]: © 2024 Human DesAIn. All rights reserved.
+        - paragraph [ref=e113]: Made with ❤️ in Germany • DSGVO konform
+  - button "Open Next.js Dev Tools" [ref=e119] [cursor=pointer]:
+    - img [ref=e120] [cursor=pointer]
+  - alert [ref=e124]
+```

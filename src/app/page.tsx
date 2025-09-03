@@ -12,10 +12,14 @@ import {
   Zap,
   Shield,
   Globe,
-  ChevronDown
+  ChevronDown,
+  Moon,
+  Sun
 } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
+import { UniverseBackground } from "@/components/universe-background"
+import { OrbitalAnimation } from "@/components/orbital-animation"
 
 export default function Home() {
   const [_isHovered, setIsHovered] = useState<string | null>(null)
@@ -48,13 +52,37 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <div className="min-h-screen relative">
+      {/* Universe Background */}
+      <UniverseBackground interactive={true} />
+      
+      <div className="relative z-10">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-[40%] -left-[20%] w-[140%] h-[140%] bg-gradient-radial from-blue-500/10 via-transparent to-transparent blur-3xl" />
-          <div className="absolute -bottom-[40%] -right-[20%] w-[140%] h-[140%] bg-gradient-radial from-purple-500/10 via-transparent to-transparent blur-3xl" />
+      <section className="relative overflow-hidden min-h-screen flex items-center">
+        {/* Floating Zodiac Symbols */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'].map((symbol, i) => (
+            <motion.div
+              key={symbol}
+              className="absolute text-4xl text-white/20"
+              style={{
+                left: `${(i * 8) + 5}%`,
+                top: `${Math.sin(i) * 30 + 50}%`
+              }}
+              animate={{
+                y: [0, -30, 0],
+                rotate: [0, 360],
+                opacity: [0.2, 0.5, 0.2]
+              }}
+              transition={{
+                duration: 10 + i * 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              {symbol}
+            </motion.div>
+          ))}
         </div>
 
         <div className="relative container mx-auto px-4 pt-32 pb-20">
@@ -69,7 +97,7 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium mb-8 text-white"
             >
               <Star className="w-4 h-4 text-yellow-500" />
               <span>The Revolutionary AI-Powered Human Design Platform</span>
@@ -82,8 +110,8 @@ export default function Home() {
               transition={{ delay: 0.2, duration: 0.8 }}
               className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
             >
-              <span className="block text-foreground">Discover Your</span>
-              <span className="block gradient-text">True Self with AI</span>
+              <span className="block text-white">Discover Your</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-purple-400 to-pink-400">Cosmic Blueprint</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -91,7 +119,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12"
+              className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12"
             >
               AI-powered Human Design analysis with scientific precision. 
               Verifiable, explainable, and powered by advanced artificial intelligence.
@@ -156,6 +184,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Orbital Planets Section */}
+      <section className="py-24 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Your Cosmic Journey Awaits
+            </h2>
+            <p className="text-xl text-gray-300">
+              Explore the planets and their influence on your Human Design
+            </p>
+          </motion.div>
+          
+          <div className="h-[600px] relative">
+            <OrbitalAnimation showPlanets={true} interactive={true} />
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
@@ -166,10 +218,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               AI-Powered Features
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-gray-300">
               Built with cutting-edge AI technology for precision and user experience
             </p>
           </motion.div>
@@ -186,14 +238,14 @@ export default function Home() {
                 onMouseLeave={() => setIsHovered(null)}
                 className="relative group"
               >
-                <div className="glass rounded-2xl p-6 h-full hover:shadow-smooth-lg transition-all duration-300 hover:scale-[1.02]">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 h-full hover:shadow-smooth-lg transition-all duration-300 hover:scale-[1.02] hover:bg-white/20">
                   {/* Icon with gradient background */}
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} p-2.5 mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <feature.icon className="w-full h-full text-white" />
                   </div>
                   
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
                   
                   {/* Hover effect */}
                   <motion.div
@@ -211,7 +263,6 @@ export default function Home() {
 
       {/* Interactive Demo Section */}
       <section className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20" />
         
         <div className="relative container mx-auto px-4">
           <motion.div
@@ -219,16 +270,16 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="glass rounded-3xl p-12 max-w-4xl mx-auto text-center"
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-12 max-w-4xl mx-auto text-center"
           >
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-500 mb-6">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
             
-            <h2 className="text-4xl font-bold mb-4">
-              Ready for Your AI Journey?
+            <h2 className="text-4xl font-bold mb-4 text-white">
+              Ready for Your Cosmic Journey?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands who have discovered their Human Design through AI and are living more authentically.
             </p>
             
@@ -241,12 +292,13 @@ export default function Home() {
               </Link>
             </div>
             
-            <p className="text-sm text-muted-foreground mt-6">
+            <p className="text-sm text-gray-400 mt-6">
               No credit card required • 14 days free AI-powered trial
             </p>
           </motion.div>
         </div>
       </section>
+      </div>
     </div>
   )
 }
